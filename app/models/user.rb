@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :comments
   has_many :responses
 
+  has_many :bookings, dependent: :destroy
+  has_many :events, through: :bookings
+
   has_one :avatar
   mount_uploader :avatar, AvatarUploader
 

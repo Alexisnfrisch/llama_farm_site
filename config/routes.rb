@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :events
+  resources :bookings
   get 'animal_profiles' => 'home#animal_profiles'
-  get 'booking' => 'home#booking'
+  get 'booking' => 'bookings#index'
   get 'buy_products' => 'home#buy_products'
   get 'about_us' => 'home#about_us'
   root 'home#index'
