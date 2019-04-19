@@ -1,7 +1,59 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+require 'yaml'
+
+def create_self
+    User.create!(name: 'Default User', username: 'default', bio: "It's me!", location: 'Asheville', email: "user@default.com", password: '111111')
+end
+
+
+def fill_queen_array(number)
+    queen_array = []
+
+    until queen_array.count == number
+        queen = Faker::TvShows::RuPaul.queen
+        queen_array.push(queen) unless queen_array.include?(queen)
+    end    
+    queen_array
+end
+
+
+def create_queens(queen_array)
+
+    queen_array.each do |queen|
+
+        p "Creating #{queen}"
+
+        pic = scrape_image(queen)
+        name = queen
+        username = queen.delete(' ')
+        
+        User.create!(
+            name: name, 
+            username: username, 
+            bio: Faker::TvShows::RuPaul.quote, 
+            email: "#{username}@rpdr.com", 
+            password: "111111", 
+            autopic: "autopics/#{username}.png", 
+            bot: :true
+        )
+
+    end
+    p "finished!"
+end
+
+def scrape_image(queen)
+    search_string = queen.gsub(/ /, '+')
+    
+    img = Nokogiri::HTML(open("https://www.google.com/search?tbm=isch&q=#{search_string}"))
+        .css('img').attr('src')
+        .value
+
+    filename = queen.delete(' ')
+    File.open("app/assets/images/autopics/#{filename}.png",'wb'){ |f| f.write(open(img).read) }
+end
+
+create_self
+
+queen_array = fill_character_array(10)
+
+create_queens(queen_array)

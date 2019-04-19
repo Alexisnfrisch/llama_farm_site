@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-
+gem 'nokogiri'
+gem 'faker'
 gem 'devise'
 gem 'carrierwave'
 gem 'bootstrap-sass'
