@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'all-users' => 'home#all_users'
   get 'show_user' => 'home#show_user'
   get 'your_profile' => 'home#your_profile'
+  get 'events' => 'events#index'
   resources :responses
   resources :comments
   devise_for :users

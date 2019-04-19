@@ -17,3 +17,5 @@
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+
+<%= link_to bookings_path(:event_id => @event.id), class: "course-btn" do %><i class="fa fa-calendar-plus-o"></i> Book This Event<% end %>
