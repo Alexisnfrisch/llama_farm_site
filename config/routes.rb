@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get 'home/show_user'
-  get 'home/animal_profiles'
-  get 'home/booking'
-  get 'home/buy_products'
-  get 'home/about_us'
+  get 'animal_profiles' => 'home#animal_profiles'
+  get 'booking' => 'home#booking'
+  get 'buy_products' => 'home#buy_products'
+  get 'about_us' => 'home#about_us'
   root 'home#index'
+  get 'all-users' => 'home#all_users'
+  get 'show_user' => 'home#show_user'
+  get 'your_profile' => 'home#your_profile'
   resources :responses
   resources :comments
   devise_for :users

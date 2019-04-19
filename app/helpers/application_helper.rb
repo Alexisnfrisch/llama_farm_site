@@ -8,9 +8,9 @@ module ApplicationHelper
 
 	def profile_pic(user)
     if user.avatar.url != nil
-      user.avatar.url
+       user.avatar.url
     elsif user.autopic != nil
-      user.autopic
+         user.autopic
     else
       'default.png'
     end

@@ -1,8 +1,17 @@
 require 'open-uri'
 require 'yaml'
 
+
+
+def destroy_all
+    User.destroy_all
+    FileUtils.rm_rf(Dir['app/assets/images/autopics/*'])
+    p 'everything is gone'
+end
+
+
 def create_self
-    User.create!(name: 'Default User', username: 'default', bio: "It's me!", location: 'Asheville', email: "user@default.com", password: '111111')
+    User.create!(name: 'Default User', username: 'default', bio: "It's me!", email: "user@default.com", password: '111111')
 end
 
 
@@ -52,8 +61,10 @@ def scrape_image(queen)
     File.open("app/assets/images/autopics/#{filename}.png",'wb'){ |f| f.write(open(img).read) }
 end
 
+destroy_all
+
 create_self
 
-queen_array = fill_character_array(10)
+queen_array = fill_queen_array(10)
 
 create_queens(queen_array)
