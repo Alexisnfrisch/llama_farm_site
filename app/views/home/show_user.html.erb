@@ -2,62 +2,63 @@
 
 <!DOCTYPE html>
 <html>
-
-<div class = "main-content-container">
-	<div class="row"> 
-		<div class="user-page-banner">
-			<div class ="user-banner-image">
-				<div class ="bot-user-image-container">
-					<%= image_tag profile_pic(@user), class: "bot-user-pic-feed" %>
+	<div class = "container">
+		<div class = "main-content-container">
+			<div class="row"> 
+				<div class="user-page-banner">
+					<div class ="user-banner-image">
+						<div class ="bot-user-image-container">
+							<%= image_tag profile_pic(@user), class: "bot-user-pic-feed" %>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
 
+			</div>
+
+		<body>
+
+			
+			
+				
+				<div class ="row">
+				 
+				  <!-- Left Column -->
+				  <div class="col-md-3">
+				  	<div class = "card">
+			  		<div class = "bot-feed-profile-container">
+						<br>
+						<br>
+						<br>
+
+						<div class= "user-name-feed"><%= @user.name %> </div>
+					  	<div class="user-username-feed">@<%= @user.username %></div>
+						<div class= "user-feed-bio"><%= @user.bio %></div>
+					</div>
+					</div>		
+				  </div>
+
+				  <!-- Mid Column -->
+
+				  <div class="col-md-6">
+				  	<div class = "card">
+				  		<h1>Info Here</h1>
+				  	</div>
+				  	
+				  </div>
+
+				  <!-- Right Column -->
+				  <div class="col-md-3">
+				  	<div class="card">
+				  		<p>
+				  			More Info
+				  		</p>
+				  	</div>
+				  </div>
+				</div>
+			
+			
+			</body>
+		</div>
 	</div>
-
-<body>
-
-	
-	
-		
-		<div class ="row">
-		 
-		  <!-- Left Column -->
-		  <div class="col-md-3">
-		  	<div class = "card">
-	  		<div class = "bot-feed-profile-container">
-				<br>
-				<br>
-				<br>
-
-				<div class= "user-name-feed"><%= @user.name %> </div>
-			  	<div class="user-username-feed">@<%= @user.username %></div>
-				<div class= "user-feed-bio"><%= @user.bio %></div>
-			</div>
-			</div>		
-		  </div>
-
-		  <!-- Mid Column -->
-
-		  <div class="col-md-6">
-		  	<div class = "card">
-		  		<h1>Info Here</h1>
-		  	</div>
-		  	
-		  </div>
-
-		  <!-- Right Column -->
-		  <div class="col-md-3">
-		  	<div class="card">
-		  		<p>
-		  			More Info
-		  		</p>
-		  	</div>
-		  </div>
-		</div>
-	
-	
-	</body>
-</div>
 </html>
 
