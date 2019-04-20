@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
   # GET /bookings
   # GET /bookings.json
   def index

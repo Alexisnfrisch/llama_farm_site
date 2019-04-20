@@ -1,5 +1,7 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   # GET /responses
   # GET /responses.json

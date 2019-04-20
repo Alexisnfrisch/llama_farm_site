@@ -17,38 +17,43 @@
 
 	
 	
-		<div class="row">
+	
+		<div class ="row">
 		 
 		  <!-- Left Column -->
-		  <div class="col-3">
+		  <div class="col-md-3">
+		  	<div class = "card">
 	  		<div class = "bot-feed-profile-container">
-				<br>
-				<br>
-				<br>
 
 				<div class= "user-name-feed"><%= current_user.name %> </div>
 			  	<div class="user-username-feed">@<%= current_user.username %></div>
 				<div class= "user-feed-bio"><%= current_user.bio %></div>
+			</div>
 
 			</div>		
 		  </div>
 
 		  <!-- Mid Column -->
 
-		  <div class="col-6">
+		  <div class="col-md-6">
+		  	<div class = "card">
+		  	<h1>Booked Events</h1>
+		  	<p>Here are all your booked events</p>
+		 	 </div>
 		  	
 		  	
 		  </div>
 
 		  <!-- Right Column -->
-		  <div class="col-3">
+		  <div class="col-md-3">
 		  	<div class="card">
 		  		<p>
-		  			Who to Follow
+		  			More Info
 		  		</p>
 		  	</div>
 		  </div>
-		</div>
+		</div>	  
+	
 	
 	</body>
 </div>

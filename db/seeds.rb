@@ -11,7 +11,7 @@ end
 
 
 def create_self
-    User.create!(name: 'Default User', username: 'default', bio: "It's me!", email: "user@default.com", password: '111111')
+    User.create!(name: 'Admin User', username: 'Admin', bio: "It's me!", email: "user@default.com", password: '111111')
 end
 
 

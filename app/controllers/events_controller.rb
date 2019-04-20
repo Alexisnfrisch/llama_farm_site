@@ -1,16 +1,8 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  # before_action :authenticate_user!
+  # before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :set_lesson, only: [:show]
-
-
-
-private
-def set_event
-    @event = Event.find(params[:id])
-end
-
-
 
 
   # GET /events

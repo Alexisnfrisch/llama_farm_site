@@ -1,3 +1,76 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.black-llama-photos {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.black-llama-static {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor:pointer;
+}
+
+
+.black-llama-click, .black-llama-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor:pointer;
+  display:none;
+}
+
+
+.brown-llama-photos {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.brown-llama-static {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+
+.brown-llama-click, .brown-llama-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  display: none;
+}
+
+
+.baby-llama-photos {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.baby-llama-static {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.baby-llama-hover, .baby-llama-click {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+	cursor: pointer;
+}
+
+.black-llama-profile-box, .brown-llama-profile-box, .baby-llama-profile-box {
+	display: none;
+}
+
+
