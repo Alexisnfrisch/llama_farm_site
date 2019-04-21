@@ -4,7 +4,6 @@ class EventsController < ApplicationController
   # before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :set_lesson, only: [:show]
 
-
   # GET /events
   # GET /events.json
   def index
@@ -64,6 +63,14 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def image(event)
+      if event.image.url != nil
+         event.image.url
+      else
+        'default.png'
+      end
   end
 
   private

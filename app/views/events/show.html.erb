@@ -1,21 +1,30 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<div class ="container">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @event.start_time %>
-</p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @event.end_time %>
-</p>
+	<div class ="event-image-container">
+    <%= image_tag image(@event), class: "bot-user-pic-feed" %>
+  	</div>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @event.name %>
+	</p>
 
-<%= link_to bookings_path(:event_id => @event.id), class: "course-btn" do %><i class="fa fa-calendar-plus-o"></i> Book This Event<% end %>
+	<p>
+	  <strong>Start time:</strong>
+	  <%= @event.start_time %>
+	</p>
+
+	<p>
+	  <strong>End time:</strong>
+	  <%= @event.end_time %>
+	</p>
+
+
+	<%= link_to 'Edit', edit_event_path(@event) %> |
+	<%= link_to 'Back', events_path %>
+
+	<%= link_to bookings_path(:event_id => @event.id), class: "course-btn" do %><i class="fa fa-calendar-plus-o"></i> Book This Event<% end %>
+</div>
