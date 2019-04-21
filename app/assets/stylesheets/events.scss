@@ -28,11 +28,13 @@
   margin-top: 30px;
 }
 
-.events-image_wrapper {
+.events-image-wrapper {
   display: block;
   position: relative;
   max-width: 100%;
   height: auto;
+  padding: 0px;
+  margin: 0px;
 
 }
 
@@ -50,6 +52,8 @@
   opacity: .35;
   transition: .65s ease;  
   border-radius: 16px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .events-text {
@@ -70,12 +74,12 @@
 }
 
 
-.delete-event {
+.destroy-words {
   // padding: 3px 10px 1px 10px;
   color: #fff;
-  font-size: 14px;
-  position: absolute;
-  top: 50px;
+  font-size: 16px;
+  position: relative;
+  bottom: 30px;
   left: 10px;
   transition: .65s ease;
   text-transform: uppercase;
@@ -89,7 +93,7 @@
 }
 
 
-.events-image_wrapper:hover .text{
+.events-image-wrapper:hover .text{
   opacity: 0;
 }
 
@@ -115,7 +119,7 @@
     max-width: 75%;  
 	}
 
-  .events-image_wrapper {
+  .events-image-wrapper {
     margin-bottom: 20px;
   }
 

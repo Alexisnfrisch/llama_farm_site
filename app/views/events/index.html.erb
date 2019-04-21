@@ -20,12 +20,11 @@
   <div class="events-container">
     <div class="events-row">
         <div class="col-md-4">
-            <div class="events-image_wrapper">
-              <p>
-  <%= link_to 'Destroy', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %>
-              </p>
+            <div class="events-image-wrapper">
+              
               <%= image_tag show_event_image(event), class: 'events-img-responsive' %>
                 <div class="events-text"><%= link_to event.name, event %></div>
+                <div class ="destroy-words"><%= link_to 'Destroy', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></div>
                 
             </div>
         </div>
@@ -38,7 +37,7 @@
   <div class="events-container">
     <div class="events-row">
         <div class="col-md-4">
-            <div class="events-image_wrapper">
+            <div class="events-image-wrapper">
               <img class="events-img-responsive" src="https://beewellhoneyfarm.com/wp-content/uploads/2017/02/beekeeper.jpg">
                 <div class="events-text"><%= link_to 'New Event', new_event_path %></div>
             </div>

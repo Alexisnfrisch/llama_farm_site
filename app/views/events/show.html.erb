@@ -1,11 +1,12 @@
 
-<div class ="container">
+<div class ="show-event-container">
 	<p id="notice"><%= notice %></p>
 
 	<div class ="event-image-container">
     <%= image_tag show_event_image(@event), class: "bot-user-pic-feed" %>
     </div>
 
+    <div class = "show-event-words-box">
 	<p>
 	  <strong>Name:</strong>
 	  <%= @event.name %>
@@ -29,4 +30,5 @@
 	<%= link_to 'Back', events_path %>
 
 	<%= link_to bookings_path(:event_id => @event.id), class: "course-btn" do %><i class="fa fa-calendar-plus-o"></i> Book This Event<% end %>
+	<div>
 </div>
