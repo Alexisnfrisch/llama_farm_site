@@ -1,35 +1,52 @@
-<div class = "container">
 
-<p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<html>
+<head>
+    <link rel="stylesheet" href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='style.css' rel='stylesheet' type='text/css'/>
+  </head>
+  
+  <body class="events-body">
+    
+    <div class="events-header">
+      <h1 class ="events-h1">EVENTS LIST</h1>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.end_time %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class ="event-card">
+<% @events.each do |event| %>
 
-<br>
-
-<%= link_to 'New Event', new_event_path %>
-
+  <div class="events-container">
+    <div class="events-row">
+        <div class="col-md-4">
+            <div class="events-image_wrapper">
+              <p>
+  <%= link_to 'Destroy', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %>
+              </p>
+              <%= image_tag show_event_image(event), class: 'events-img-responsive' %>
+                <div class="events-text"><%= link_to event.name, event %></div>
+                
+            </div>
+        </div>
+    </div>
+  </div>
+<% end %>
 </div>
+    
+
+  <div class="events-container">
+    <div class="events-row">
+        <div class="col-md-4">
+            <div class="events-image_wrapper">
+              <img class="events-img-responsive" src="https://beewellhoneyfarm.com/wp-content/uploads/2017/02/beekeeper.jpg">
+                <div class="events-text"><%= link_to 'New Event', new_event_path %></div>
+            </div>
+        </div>
+    </div>
+  </div>
+    
+
+ 
+  </body>
+</html>

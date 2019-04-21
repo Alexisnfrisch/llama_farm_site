@@ -2,10 +2,9 @@
 <div class ="container">
 	<p id="notice"><%= notice %></p>
 
-
 	<div class ="event-image-container">
-    <%= image_tag image(@event), class: "bot-user-pic-feed" %>
-  	</div>
+    <%= image_tag show_event_image(@event), class: "bot-user-pic-feed" %>
+    </div>
 
 	<p>
 	  <strong>Name:</strong>
@@ -22,6 +21,9 @@
 	  <%= @event.end_time %>
 	</p>
 
+	<p>
+	<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</p>
 
 	<%= link_to 'Edit', edit_event_path(@event) %> |
 	<%= link_to 'Back', events_path %>

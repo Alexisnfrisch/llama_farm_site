@@ -6,92 +6,58 @@
 
 <head>
 	<link rel="stylesheet" href="home.scss"/>
-	
 </head>
 
 
 <body>
 	<h1>Animal Profiles</h1>
-	<h4 id='instruction-words'>Click to See Profile:</h4>
+<h4 id='instruction-words'>Click to See Profile:</h4>
 
-	</div>		
+<div class="llama">
+    <div class="llama-pic">
+        <%= image_tag "black-llama.png", size: 200 %> 
+    </div>
+    <div class='llama-profile hidden'>
+        <h1>Black Llama</h1>
+        <p>This is a black llama</p>
+    </div>
+</div>
 
+<div class="llama">
+    <div class="llama-pic">
+        <%= image_tag "brown-llama.png", size: 200 %> 
+    </div>
+    <div class='llama-profile hidden'>
+        <h1>Brown Llama</h1>
+        <p>This is a brown llama</p>
+    </div>
+</div>
 
+<div class="llama">
+    <div class="llama-pic">
+        <%= image_tag "baby-llama.png", size: 200 %> 
+    </div>
+    <div class='llama-profile hidden'>
+        <h1>Baby Llama</h1>
+        <p>This is a baby llama</p>
+    </div>
+</div>
 
-<!-- User Icon Divs -->
-	<div id="user-icon-choices">
-			
-		<!--BLACK LLAMA IMAGES  -->	
-		<div class="black-llama-photos">
-			<div class ="black-llama-static">
-				
-				<%= link_to image_tag("black-llama.png", style: "height:200px;"), id: 'black-llama-static-image' %> 
-				
-			</div>
-			
-			<div class="black-llama-hover">
-				<%= link_to image_tag("black-llama-border.png", style: "height:200px;"), id: 'black-llama-hover-image' %> 
-			</div>
+<script>
+    const llamas = document.querySelectorAll('.llama-pic')
+    
+    function toggleProfile() {
+        this.nextElementSibling.classList.toggle('hidden');
+    }
 
-			<div class="black-llama-click">
-				<%= link_to image_tag("black-llama-border.png", style: "height:200px;"), id: 'black-llama-click-image' %> 
-			</div>
-
-		</div>
-
-		<!--BROWN LLAMA IMAGES  -->
-		<div class = "brown-llama-pics">
-			<div class ="brown-llama-static">
-				<%= link_to image_tag("brown-llama.png", style: "height:200px;"), id: 'brown-llama-static-image' %> 
-			</div>
-			
-			<div class="brown-llama-hover">
-				<%= link_to image_tag("brown-llama-border.png", style: "height:200px;"), id: 'brown-llama-hover-image' %> 
-			</div>
-
-			<div class="brown-llama-click">
-				<%= link_to image_tag("brown-llama-border.png", style: "height:200px;"), id: 'brown-llama-click-image' %> 
-			</div>
-
-		</div>
-
-		<!--BABY LLAMA IMAGES  -->
-		<div class = "baby-llama-icons">
-			<div class ="baby-llama-static">
-				<%= link_to image_tag("baby-llama.png", style: "height:200px;"), id: 'baby-llama-static-image' %> 
-			</div>
-			
-			<div class="baby-llama-hover">
-				<%= link_to image_tag("baby-llama-border.png", style: "height:200px;"), id: 'baby-llama-hover-image' %> 
-			</div>
-
-			<div class="baby-llama-click">
-				<%= link_to image_tag("baby-llama-border.png", style: "height:200px;"), id: 'baby-llama-click-image' %> 
-			</div>
-		</div>
-	</div>
-
-<!-- Profile Boxes -->
-	<div class ="profile-boxes">
-		<div class ="black-llama-profile-box"> 
-			<h1>Black Llama</h1>
-			<p>This is a black llama</p>
-		</div>
-		
-		<div class ="brown-llama-profile-box"> 
-			<h1>Brown Llama</h1>
-			<p>This is a brown llama</p>
-		</div>
-		
-		<div class ="baby-llama-profile-box"> 
-			<h1>Baby Llama</h1>
-			<p>This is a baby llama</p>
-		</div>
-	</div>	
+    llamas.forEach (llama => {
+        llama.addEventListener('click', toggleProfile);
+    });
+</script>
 
 </body>
 
-
 </html>
+
 
 </div>

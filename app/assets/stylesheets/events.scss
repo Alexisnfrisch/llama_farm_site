@@ -1,3 +1,153 @@
-// Place all the styles related to the Events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.events-body {
+  background-color: #5F6735;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0; 
+}
+
+.events-header {
+  background-color: none;
+  height: 95px;
+  text-align: center;
+}
+
+
+.events-h1 {
+  color: white;
+  background-color: none;
+  font-size: 36px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  top: 44px;
+  position: relative; 
+}
+
+
+.events-row {
+  margin-top: 30px;
+}
+
+.events-image_wrapper {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.events-img-responsive {
+  display: block;
+  position: relative;
+  // max-width: 100%;
+  // max-height: 100%;
+  // height: auto;
+  width: 440.3px;
+  height: 293.89px;
+  // overflow: auto;
+  // object-fit: contain; 
+  box-shadow: 0 0 80px #494949;
+  opacity: .35;
+  transition: .65s ease;  
+  border-radius: 16px;
+}
+
+.events-text {
+  text-align: center;
+  width: 50%;
+  border: 1px solid #fff;
+  padding: 3px 10px 1px 10px;
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: .65s ease;
+  text-transform: uppercase;
+  opacity: .9;
+}
+
+
+.delete-event {
+  // padding: 3px 10px 1px 10px;
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  transition: .65s ease;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+
+.events-img-responsive:hover {
+  opacity: 1;
+  box-shadow: 0 0 30px #5a5a5a;
+}
+
+
+.events-image_wrapper:hover .text{
+  opacity: 0;
+}
+
+
+.events-showcase {
+  color: #31363d;
+  font-size: 10px;
+  height: 70px;
+  line-height: 70px;
+  text-align: right;
+  text-transform: uppercase;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 473px) {
+   
+   .events-text {
+    width: auto;
+  	}
+
+
+  .events-img-responsive {
+    max-width: 75%;  
+	}
+
+  .events-image_wrapper {
+    margin-bottom: 20px;
+  }
+
+  .clearfix {
+    clear: both;
+  }
+}
+
+@media (max-width: 767px) {
+    .events-text {
+    width: auto;
+  	}
+  .events-image-wrapper {
+    margin: 0 50px 20px;
+    width: 50%;
+  	}
+  .events-img-responsive {
+    max-width: 50%;
+    margin-right: 100px;
+    margin-left:100px;
+	}
+}
+
+@media (max-width: 991px) {
+  .events-text {
+    width: auto;
+  }
+  .events-image-wrapper {
+    max-width: 75%;
+    margin: 0 50px 20px;
+  }
+  .events-img-responsive {
+    max-width: 75%;
+  }
+}

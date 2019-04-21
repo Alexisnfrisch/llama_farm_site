@@ -17,6 +17,14 @@
  @import 'bootstrap';
  @import 'font-awesome';
 
+ .hidden {
+  display: none;
+}
+
+ body{
+  background-color: #5F6735;
+ }
+
 .container {
 	margin: 0px, auto;
   	padding: 0px;
@@ -36,6 +44,7 @@
 h1 {
 	margin: 0px;
 	padding: 0px;
+  color: white;
 }
 
 
@@ -202,4 +211,10 @@ h1 {
 
 #form.textfield {
 	border-radius: 25px;
+}
+
+.well.user-list-wells {
+  background-color: #DCDCDC;
+  text-align: center;
+
 }
