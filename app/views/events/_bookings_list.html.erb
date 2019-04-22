@@ -1,0 +1,32 @@
+<div class="row">
+  <% @bookings.each do |booking| %>
+    <div class="col-md-3">
+      <div class="well user-list-wells">
+        <div class="row">
+          <div class="col-md-6">
+            <p> Photo Here </p>
+          </div>
+          <div class="col-md-6">
+            <p>
+              <% if current_user.bookings.include?(booking.id) %>
+                <%= link_to "Booked", your_profile_path(id: current_user.id), class: "btn btn-primary", id: "booked_btn" %>
+              <% else %>
+                  <%= link_to "Book", your_profile_path(id: current_user.id), class: "btn btn-primary" %>
+                
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <%= link_to your_profile_path(id: user.id) do %>
+            <h3><%= user.name %></h3>
+            <p><%= user.username %></p>
+          <% end %>
+          <p>
+            <%= user.bio %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

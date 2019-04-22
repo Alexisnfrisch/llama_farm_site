@@ -17,6 +17,35 @@
  @import 'bootstrap';
  @import 'font-awesome';
 
+
+
+.btn-primary {
+  background-color: #1c94e0 !important;
+  border: 1px solid #1c94e0 !important;
+  width: 280px !important;
+  border-radius: 16px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+}
+
+.btn-danger {
+  background-color: #8B0000 !important;
+  border: 1px solid #8B0000 !important;
+  width: 280px !important;
+  border-radius: 16px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+}
+
+.btn-success {
+  background-color: #1c94e0 !important;
+  border: 1px solid #1c94e0 !important;
+  border-radius: 16px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  position: relative !important;
+  bottom: 5px !important;
+}
  .hidden {
   display: none;
 }
@@ -347,7 +376,7 @@ h2 {
 }
 
 .form-group, .field, .input {
-  color: white;
+  color: black;
 }
 
 .input {

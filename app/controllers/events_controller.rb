@@ -66,6 +66,35 @@ class EventsController < ApplicationController
   end
 
 
+  def now_booked
+    current_user.bookings.push(params[:id].to_i)
+    current_user.save
+    redirect_to your_profile_path(id: params[:id])
+  end
+
+  def cancel_booking
+    current_user.bookings.delete(params[:id].to_i)
+    current_user.save
+    redirect_to your_profile_path(id: params[:id])
+  end
+
+  def what_you_booked
+    @booking = Bookings.find(params[:id])
+    @bookings = Bookings.where(id: @booking.bookings)
+  end
+
+  def all_booked_users
+    @booking = Bookings.find(params[:id])
+    @bookings = []
+
+    Bookings.all.each do |booking|
+      if user.bookings.include?(@user.id)
+        @users.push(user)
+      end
+    end   
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event

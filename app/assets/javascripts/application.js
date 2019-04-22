@@ -21,12 +21,12 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-  $('#unfollow_btn').hover(function(){
+  $('#booked_btn').hover(function(){
     $(this).removeClass('btn-primary');
     $(this).addClass('btn-danger');
-    $(this).html("Unfollow");
+    $(this).html("Remove Booking");
   }, function(){
-    $(this).html("Following");
+    $(this).html("Book Event");
     $(this).removeClass('btn-danger');
     $(this).addClass('btn-primary');
   });

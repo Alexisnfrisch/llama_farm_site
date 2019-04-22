@@ -29,6 +29,16 @@
 	<%= link_to 'Edit', edit_event_path(@event) %> |
 	<%= link_to 'Back', events_path %>
 
-	<%= link_to bookings_path(:event_id => @event.id), class: "course-btn" do %><i class="fa fa-calendar-plus-o"></i> Book This Event<% end %>
+	<%= link_to events_path(:event_id => @event.id), class: "course-btn" do %><i class="fa fa-calendar-plus-o"></i> Book This Event<% end %> 
+
+	<div class= "booking-button">
+		<% if current_user.bookings.include?(booking.id) %>
+                <%= link_to "Booked", your_profile_path(id: current_user.id), class: "btn btn-primary", id: "booked_btn" %>
+              <% else %>
+                  <%= link_to "Book", your_profile_path(id: current_user.id), class: "btn btn-primary" %>
+                
+              <% end %>
+		</div>	
+
 	<div>
 </div>

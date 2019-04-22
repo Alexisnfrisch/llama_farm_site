@@ -31,4 +31,33 @@ class HomeController < ApplicationController
     @users = User.all
   end
 
+  def now_booked
+    current_user.bookings.push(params[:id].to_i)
+    current_user.save
+    redirect_to your_profile_path(id: params[:id])
+  end
+
+  def cancel_booking
+    current_user.bookings.delete(params[:id].to_i)
+    current_user.save
+    redirect_to your_profile_path(id: params[:id])
+  end
+
+  def what_you_booked
+    @user = User.find(params[:id])
+    @users = User.where(id: @user.bookings)
+  end
+
+  def all_booked_users
+    @user = User.find(params[:id])
+    @users = []
+
+    User.all.each do |user|
+      if user.bookings.include?(@user.id)
+        @users.push(user)
+      end
+    end   
+  end
+
+
 end
